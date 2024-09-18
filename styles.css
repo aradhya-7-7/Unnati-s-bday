@@ -1,0 +1,104 @@
+/* Set the body with a pastel background and elegant font */
+body {
+    background-color: #f8e1e9; /* Soft pastel pink */
+    margin: 0;
+    font-family: 'Playfair Display', serif; /* Elegant and sophisticated font */
+    color: #333; /* Dark gray for contrast */
+}
+
+/* Container for the image grid */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200vh; /* Make the page taller */
+    position: relative;
+    padding: 80px 20px; /* Add padding for a more aesthetic page */
+}
+
+/* Image grid styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Increase image size */
+    gap: 20px; /* More spacing between images */
+    width: 100%;
+    max-width: 1400px;
+    box-sizing: border-box;
+}
+
+/* Individual image boxes */
+.image-box {
+    position: relative;
+    padding-top: 100%; /* Maintain square aspect ratio */
+    overflow: hidden; /* Ensure images don't overflow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.image-box:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Images styling */
+.image-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #fff; /* White frame */
+    box-sizing: border-box;
+    border-radius: 10px; /* Soft rounded corners for a modern look */
+}
+
+/* Centered overlay text */
+.centered-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem; /* Large font size for a statement */
+    color: #ff69b4; /* A vibrant pastel pink */
+    font-family: 'Great Vibes', cursive; /* Fancy cursive font for the title */
+    text-align: center;
+    text-shadow: 4px 4px 4px rgba(255, 255, 255, 0.8); /* Soft white shadow for a glow effect */
+    padding: 20px;
+    z-index: 1000; /* Ensure it's on top */
+    letter-spacing: 2px; /* Slight spacing for elegance */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Adjust grid for medium screens */
+        gap: 15px;
+    }
+
+    .centered-text {
+        font-size: 3rem; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+        gap: 10px;
+    }
+
+    .centered-text {
+        font-size: 2.5rem; /* Adjust font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Further adjust grid for small screens */
+        gap: 5px;
+    }
+
+    .centered-text {
+        font-size: 2rem; /* Further adjust font size for smaller screens */
+    }
+}
