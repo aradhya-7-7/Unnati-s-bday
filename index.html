@@ -8,6 +8,10 @@
 </head>
 <body>
 
+   <button id="play-button" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); padding: 10px 20px; background-color: #ff69b4; color: white; border: none; border-radius: 20px; font-size: 16px; font-family: Arial, sans-serif; cursor: pointer; z-index: 1000; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    🎵 Play Birthday Music 🎵
+    </button>
+    
     <audio id="birthday-audio" loop>
         <source src="song.mp3" type="audio/mp3">
     </audio>
@@ -48,15 +52,14 @@
         </div>
     </div>
 
-    <script>
-        // Get the audio element
+   <script>
+        // Get the audio element and play button
         const audio = document.getElementById('birthday-audio');
-        
-        // Play the audio when the page is loaded
-        window.addEventListener('load', () => {
-            audio.play().catch(error => {
-                console.log('Autoplay was prevented. You need to interact with the page first.');
-            });
+        const playButton = document.getElementById('play-button');
+
+        // Play audio on button click
+        playButton.addEventListener('click', () => {
+            audio.play();
         });
     </script>
 </body>
